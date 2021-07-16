@@ -26,12 +26,14 @@ section {
 }
 
 section.alternate-background {
+  display: block;
   background-color: #00a699;
   color: #fff;
 }
 
 main img {
-  width: 100px;
+  width: 100%;
+  margin: 10px auto;
 }
 
 /* ---  Groups & Items --- */
@@ -39,6 +41,7 @@ main img {
 .group {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .item {
@@ -53,6 +56,8 @@ main img {
 /* -------  Navigation ------- */
 
 header {
+  display: flex;
+  flex-direction: column;
   background-color: #ff385c;
   padding: 20px 20px 0 20px;
   text-align: center;
@@ -64,14 +69,27 @@ header {
   color: #fff;
 }
 
+header nav {
+  padding: 0;
+  margin: 0;
+}
+
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0;
+}
+
 header nav ul li {
   list-style-type: none;
+  margin: 0px 10px;
+  padding: 0;
 }
 
 header nav ul li a {
   color: #fff;
   text-decoration: none;
-  padding: 0 20px 0 0;
 }
 
 header nav ul li a:hover {
@@ -82,17 +100,26 @@ header nav ul li a:hover {
 /* -------  Search Form ------- */
 form {
   border: 2px solid #ff385c;
-  padding: 10px;
+  padding: 20px;
+}
+
+form div {
+  display: flex;
+  justify-content: flex-end;
 }
 
 form label {
   font-weight: bold;
+  margin-right: 30px;
+  flex: 1;
 }
 
 form select,
 form input {
   margin-bottom: 20px;
-  width: 180px;
+  padding: 0;
+  width: 50%;
+  flex: 2;
 }
 
 form button {
@@ -102,6 +129,11 @@ form button {
   font-size: 24px;
   padding: 15px;
   width: 100%;
+}
+
+#stay {
+  display: flex;
+  flex-direction: column;
 }
 
 /* -------  Footer ------- */
@@ -116,4 +148,73 @@ footer p {
   padding: 20px;
 }
 
+/* -------  Host ------- */
+
+#host {
+  padding: 40px;
+}
+
 /* -------  Media Query ------- */
+
+@media all and (min-width: 800px) {
+  /* -------  Navigation Desktop ------- */
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* -------  Search Form Desktop ------- */
+  form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  form div {
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+  }
+
+  form select,
+  form input {
+    width: 150px;
+    margin: 5px 0 0 0;
+  }
+
+  /* -------  About Section Desktop ------- */
+  #about-wrapper {
+    display: flex;
+  }
+
+  #about div {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    margin: 5px;
+  }
+
+  /* -------  Idea Section Desktop ------- */
+  #idea-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #ideas div {
+    flex: 1;
+    margin: 5px;
+  }
+
+  /* -------  Host Section Desktop ------- */
+  #host {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  #host div {
+    flex: 1;
+    margin: 10px;
+  }
+}
